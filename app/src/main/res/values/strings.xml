@@ -6,4 +6,6 @@
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="log_in">Log In</string>
+    <string name="powered_by">powered by</string>
+    <string name="developer">A Studio</string>
 </resources>
