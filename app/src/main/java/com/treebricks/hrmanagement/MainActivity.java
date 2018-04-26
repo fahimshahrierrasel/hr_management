@@ -1,9 +1,8 @@
 package com.treebricks.hrmanagement;
 
-import android.net.Uri;
+import android.app.Fragment;
+import android.app.FragmentManager;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -16,6 +15,7 @@ import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
+import com.treebricks.hrmanagement.fragments.HomeFragment;
 import com.treebricks.hrmanagement.utils.SeasonImage;
 
 import java.util.ArrayList;
@@ -23,24 +23,88 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Toolbar toolbar;
+    private Fragment currentFragment;
+    private Drawer navigationDrawer;
+    private FragmentManager fragmentManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        setNavigationDrawer();
 
+        fragmentManager = getFragmentManager();
+        currentFragment = new HomeFragment();
+        setCurrentFragment(currentFragment);
+
+        navigationDrawer.setOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
+            @Override
+            public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
+                int item = (int) drawerItem.getIdentifier();
+                switch (item)
+                {
+                    case 1:
+                        currentFragment = new HomeFragment();
+                        break;
+                    case 2:
+
+                        break;
+                    case 3:
+
+                        break;
+                    case 4:
+
+                        break;
+                    case 5:
+
+                        break;
+                    case 6:
+
+                        break;
+                    case 7:
+
+                        break;
+                    case 8:
+
+                        break;
+                    case 9:
+
+                        break;
+                    case 10:
+
+                        break;
+                    default:
+                        currentFragment = new HomeFragment();
+                        break;
+                }
+                setCurrentFragment(currentFragment);
+                return false;
+            }
+        });
+    }
+
+    private void setCurrentFragment(Fragment currentFragment)
+    {
+        fragmentManager.beginTransaction()
+                .replace(R.id.fragment_placeholder, currentFragment)
+                .commit();
+    }
+
+    private void setNavigationDrawer() {
         PrimaryDrawerItem home = new PrimaryDrawerItem().withIdentifier(1).withName("Home");
         PrimaryDrawerItem attendance = new PrimaryDrawerItem().withIdentifier(2).withName("Attendance");
         PrimaryDrawerItem liveAttendance = new PrimaryDrawerItem().withIdentifier(3).withName("Current Attendance Status");
         PrimaryDrawerItem leaveApplication = new PrimaryDrawerItem().withIdentifier(4).withName("Apply for Leave");
         PrimaryDrawerItem leaveApplicationList = new PrimaryDrawerItem().withIdentifier(5).withName("Leave Applications");
-        PrimaryDrawerItem allEmployee = new PrimaryDrawerItem().withIdentifier(5).withName("All Employee");
-        PrimaryDrawerItem forum = new PrimaryDrawerItem().withIdentifier(5).withName("Forum");
-        PrimaryDrawerItem chat = new PrimaryDrawerItem().withIdentifier(5).withName("Chat");
+        PrimaryDrawerItem allEmployee = new PrimaryDrawerItem().withIdentifier(6).withName("All Employee");
+        PrimaryDrawerItem forum = new PrimaryDrawerItem().withIdentifier(7).withName("Forum");
+        PrimaryDrawerItem chat = new PrimaryDrawerItem().withIdentifier(8).withName("Chat");
 
-        PrimaryDrawerItem profile = new PrimaryDrawerItem().withIdentifier(88).withName("Profile");
-        PrimaryDrawerItem settings = new PrimaryDrawerItem().withIdentifier(88).withName("Settings");
+        PrimaryDrawerItem profile = new PrimaryDrawerItem().withIdentifier(9).withName("Profile");
+        PrimaryDrawerItem settings = new PrimaryDrawerItem().withIdentifier(10).withName("Settings");
 
         List<IDrawerItem> primaryItems = new ArrayList<>();
         primaryItems.add(home);
@@ -62,25 +126,18 @@ public class MainActivity extends AppCompatActivity {
                 .withEmail("Developer")
                 .withIcon(R.drawable.ic_launcher_foreground);
 
-        AccountHeader accountHeader = new AccountHeaderBuilder().withActivity(this)
-                .withHeaderBackground(SeasonImage.getThisSeasonImage(this))
+        AccountHeader accountHeader = new AccountHeaderBuilder().withActivity(MainActivity.this)
+                .withHeaderBackground(SeasonImage.getThisSeasonImage(MainActivity.this))
                 .addProfiles(accountProfile)
                 .build();
 
-        Drawer drawer = new DrawerBuilder()
-            .withActivity(this)
-            .withToolbar(toolbar)
-            .withAccountHeader(accountHeader)
-            .withDrawerItems(primaryItems)
-            .withStickyDrawerItems(footerItems)
-            .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
-                @Override
-                public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
-                    return false;
-                }
-            }).build();
-
-
+        navigationDrawer = new DrawerBuilder()
+                .withActivity(MainActivity.this)
+                .withToolbar(toolbar)
+                .withAccountHeader(accountHeader)
+                .withDrawerItems(primaryItems)
+                .withStickyDrawerItems(footerItems)
+                .build();
     }
 
 }

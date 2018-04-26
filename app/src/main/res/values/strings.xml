@@ -8,4 +8,6 @@
     <string name="log_in">Log In</string>
     <string name="powered_by">powered by</string>
     <string name="developer">A Studio</string>
+    <string name="more">More...</string>
+    <string name="attendance_summery">Attendance Summery</string>
 </resources>
