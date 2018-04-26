@@ -1,8 +1,9 @@
 package com.treebricks.hrmanagement;
 
-import android.app.Fragment;
-import android.app.FragmentManager;
+
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -16,6 +17,7 @@ import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
+import com.treebricks.hrmanagement.fragments.AttendanceFragment;
 import com.treebricks.hrmanagement.fragments.HomeFragment;
 import com.treebricks.hrmanagement.fragments.LeaveApplicationFragment;
 import com.treebricks.hrmanagement.utils.SeasonImage;
@@ -38,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         setNavigationDrawer();
 
-        fragmentManager = getFragmentManager();
+        fragmentManager = getSupportFragmentManager();
         currentFragment = new HomeFragment();
         setCurrentFragment(currentFragment);
 
@@ -52,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                         currentFragment = new HomeFragment();
                         break;
                     case 2:
-
+                        currentFragment = new AttendanceFragment();
                         break;
                     case 3:
 
