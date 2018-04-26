@@ -5,6 +5,7 @@ import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.View;
 
 import com.mikepenz.materialdrawer.AccountHeader;
@@ -16,6 +17,7 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.treebricks.hrmanagement.fragments.HomeFragment;
+import com.treebricks.hrmanagement.fragments.LeaveApplicationFragment;
 import com.treebricks.hrmanagement.utils.SeasonImage;
 
 import java.util.ArrayList;
@@ -56,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
                         break;
                     case 4:
-
+                        currentFragment = new LeaveApplicationFragment();
                         break;
                     case 5:
 
@@ -96,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
     private void setNavigationDrawer() {
         PrimaryDrawerItem home = new PrimaryDrawerItem().withIdentifier(1).withName("Home");
         PrimaryDrawerItem attendance = new PrimaryDrawerItem().withIdentifier(2).withName("Attendance");
-        PrimaryDrawerItem liveAttendance = new PrimaryDrawerItem().withIdentifier(3).withName("Current Attendance Status");
+        PrimaryDrawerItem liveAttendance = new PrimaryDrawerItem().withIdentifier(3).withName("Current Present Status");
         PrimaryDrawerItem leaveApplication = new PrimaryDrawerItem().withIdentifier(4).withName("Apply for Leave");
         PrimaryDrawerItem leaveApplicationList = new PrimaryDrawerItem().withIdentifier(5).withName("Leave Applications");
         PrimaryDrawerItem allEmployee = new PrimaryDrawerItem().withIdentifier(6).withName("All Employee");
@@ -140,4 +142,8 @@ public class MainActivity extends AppCompatActivity {
                 .build();
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        return super.onCreateOptionsMenu(menu);
+    }
 }
