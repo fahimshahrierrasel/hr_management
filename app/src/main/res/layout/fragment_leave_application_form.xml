@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -25,7 +24,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Leave Type" />
+                android:text="@string/leave_type" />
 
             <Spinner
                 android:id="@+id/spinLeaveType"
@@ -37,7 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="From" />
+                android:text="@string/from" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -51,14 +50,15 @@
                     android:layout_weight="0.7"
                     android:background="@null"
                     android:enabled="false"
-                    android:hint="Leave start from" />
+                    android:inputType="text"
+                    android:hint="@string/leave_start_from" />
 
                 <Button
                     android:id="@+id/btn_leave_start"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
-                    android:text="Select Date" />
+                    android:text="@string/select_date" />
             </LinearLayout>
 
 
@@ -66,7 +66,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="To" />
+                android:text="@string/to" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -80,21 +80,22 @@
                     android:layout_weight="0.7"
                     android:background="@null"
                     android:enabled="false"
-                    android:hint="Leave end" />
+                    android:inputType="text"
+                    android:hint="@string/leave_end" />
 
                 <Button
                     android:id="@+id/btn_leave_end"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
-                    android:text="Select Date" />
+                    android:text="@string/select_date" />
             </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="No. of leave" />
+                android:text="@string/no_of_leave" />
 
             <EditText
                 android:id="@+id/etLeaveDays"
@@ -102,13 +103,13 @@
                 android:layout_height="40dp"
                 android:background="@null"
                 android:enabled="false"
-                android:text="99 Days" />
+                android:text="@string/_99_days" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="Remarks" />
+                android:text="@string/remarks" />
 
             <EditText
                 android:id="@+id/etRemarks"
@@ -116,7 +117,7 @@
                 android:layout_height="wrap_content"
                 android:background="@null"
                 android:gravity="start"
-                android:hint="Special reason for the leave"
+                android:hint="@string/special_reason_for_the_leave"
                 android:inputType="textMultiLine"
                 android:maxLines="3"
                 android:minLines="3"
@@ -126,7 +127,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="Request to" />
+                android:text="@string/request_to" />
 
             <Spinner
                 android:id="@+id/spinLeaveRequestTo"

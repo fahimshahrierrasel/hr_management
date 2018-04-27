@@ -10,4 +10,17 @@
     <string name="developer">A Studio</string>
     <string name="more">More...</string>
     <string name="attendance_summery">Attendance Summery</string>
+    <string name="john_q_public">John Q. Public</string>
+    <string name="leave_type">Leave Type</string>
+    <string name="from">From</string>
+    <string name="leave_start_from">Leave start from</string>
+    <string name="select_date">Select Date</string>
+    <string name="to">To</string>
+    <string name="leave_end">Leave end</string>
+    <string name="no_of_leave">No. of leave</string>
+    <string name="_99_days">99 Days</string>
+    <string name="remarks">Remarks</string>
+    <string name="special_reason_for_the_leave">Special reason for the leave</string>
+    <string name="request_to">Request to</string>
+    <string name="leave_reason">Leave Reason</string>
 </resources>

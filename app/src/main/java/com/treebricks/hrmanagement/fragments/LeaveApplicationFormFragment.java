@@ -25,9 +25,9 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
-public class LeaveApplicationFragment extends Fragment {
+public class LeaveApplicationFormFragment extends Fragment {
 
-    private static final String TAG = LeaveApplicationFragment.class.getSimpleName();
+    private static final String TAG = LeaveApplicationFormFragment.class.getSimpleName();
     private EditText etLeaveStart;
     private EditText etLeaveEnd;
     private EditText etTotalLeaves;
@@ -41,7 +41,7 @@ public class LeaveApplicationFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_leave_application, container, false);
+        return inflater.inflate(R.layout.fragment_leave_application_form, container, false);
     }
 
     @Override

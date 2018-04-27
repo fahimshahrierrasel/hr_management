@@ -1,6 +1,5 @@
 package com.treebricks.hrmanagement;
 
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -19,7 +18,8 @@ import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.treebricks.hrmanagement.fragments.AttendanceFragment;
 import com.treebricks.hrmanagement.fragments.HomeFragment;
-import com.treebricks.hrmanagement.fragments.LeaveApplicationFragment;
+import com.treebricks.hrmanagement.fragments.LeaveApplicationFormFragment;
+import com.treebricks.hrmanagement.fragments.LeaveApplicationsListFragment;
 import com.treebricks.hrmanagement.utils.SeasonImage;
 
 import java.util.ArrayList;
@@ -40,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         setNavigationDrawer();
 
+        if(getSupportActionBar()!=null)
+            getSupportActionBar().setTitle("Home");
+
         fragmentManager = getSupportFragmentManager();
         currentFragment = new HomeFragment();
         setCurrentFragment(currentFragment);
@@ -51,19 +54,23 @@ public class MainActivity extends AppCompatActivity {
                 switch (item)
                 {
                     case 1:
+                        toolbar.setTitle("Home");
                         currentFragment = new HomeFragment();
                         break;
                     case 2:
+                        toolbar.setTitle("Attendance");
                         currentFragment = new AttendanceFragment();
                         break;
                     case 3:
 
                         break;
                     case 4:
-                        currentFragment = new LeaveApplicationFragment();
+                        toolbar.setTitle("Application Form");
+                        currentFragment = new LeaveApplicationFormFragment();
                         break;
                     case 5:
-
+                        toolbar.setTitle("Leave Applications");
+                        currentFragment = new LeaveApplicationsListFragment();
                         break;
                     case 6:
 
