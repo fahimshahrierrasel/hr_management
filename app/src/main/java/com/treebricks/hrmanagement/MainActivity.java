@@ -17,6 +17,7 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.treebricks.hrmanagement.fragments.AttendanceFragment;
+import com.treebricks.hrmanagement.fragments.EmployeeListFragment;
 import com.treebricks.hrmanagement.fragments.HomeFragment;
 import com.treebricks.hrmanagement.fragments.LeaveApplicationFormFragment;
 import com.treebricks.hrmanagement.fragments.LeaveApplicationsListFragment;
@@ -73,7 +74,8 @@ public class MainActivity extends AppCompatActivity {
                         currentFragment = new LeaveApplicationsListFragment();
                         break;
                     case 6:
-
+                        toolbar.setTitle("All Employee");
+                        currentFragment = new EmployeeListFragment();
                         break;
                     case 7:
 

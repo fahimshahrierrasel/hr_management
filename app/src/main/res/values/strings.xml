@@ -23,4 +23,7 @@
     <string name="special_reason_for_the_leave">Special reason for the leave</string>
     <string name="request_to">Request to</string>
     <string name="leave_reason">Leave Reason</string>
+    <string name="email">johnqpublic@example.com</string>
+    <string name="designation">General Position</string>
+    <string name="employee_image">Employee Image</string>
 </resources>

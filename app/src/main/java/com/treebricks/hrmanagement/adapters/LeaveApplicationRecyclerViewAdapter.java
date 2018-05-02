@@ -51,7 +51,7 @@ public class LeaveApplicationRecyclerViewAdapter extends RecyclerView.Adapter<Le
         ViewHolder(View itemView) {
             super(itemView);
             cvLeaveApplicationItem = itemView.findViewById(R.id.cvLeaveApplicationItem);
-            tvLeaveApplicantName = itemView.findViewById(R.id.tv_leave_applier_name);
+            tvLeaveApplicantName = itemView.findViewById(R.id.tv_employee_name);
             tvLeaveType = itemView.findViewById(R.id.tvLeaveType);
             tvTotalLeaveDays = itemView.findViewById(R.id.tvTotalLeaveDays);
         }
