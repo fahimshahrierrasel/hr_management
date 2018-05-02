@@ -2,6 +2,7 @@ package com.treebricks.hrmanagement.adapters;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.treebricks.hrmanagement.R;
+import com.treebricks.hrmanagement.fragments.EmployeeDetailsFragment;
 import com.treebricks.hrmanagement.models.EmployeeSummery;
 
 import java.util.ArrayList;
@@ -38,6 +40,16 @@ public class EmployeeListRecyclerViewAdapter extends RecyclerView.Adapter<Employ
         holder.tvLeaveApplicantName.setText(employeeSummery.getName());
         holder.tvDesignation.setText(employeeSummery.getDesignation());
         holder.tvEmail.setText(employeeSummery.getEmail());
+        holder.cvContainer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((AppCompatActivity) context).getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_placeholder, new EmployeeDetailsFragment(), null)
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
     }
 
     @Override
@@ -45,7 +57,7 @@ public class EmployeeListRecyclerViewAdapter extends RecyclerView.Adapter<Employ
         return employeeSummeries.size();
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder{
+    class ViewHolder extends RecyclerView.ViewHolder {
         CardView cvContainer;
         ImageView ivEmployeeImage;
         TextView tvLeaveApplicantName;

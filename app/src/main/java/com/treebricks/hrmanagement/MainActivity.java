@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
         ProfileDrawerItem accountProfile = new ProfileDrawerItem()
                 .withName("Md. Fahim Shahrier Rasel")
                 .withEmail("Developer")
-                .withIcon(R.drawable.ic_launcher_foreground);
+                .withIcon(R.drawable.potrait);
 
         AccountHeader accountHeader = new AccountHeaderBuilder().withActivity(MainActivity.this)
                 .withHeaderBackground(SeasonImage.getThisSeasonImage(MainActivity.this))
